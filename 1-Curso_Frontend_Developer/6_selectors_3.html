@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>selectors 3</title>
+    <style>
+        p {
+            color: salmon
+        }
+        p::first-letter{
+            color: red;
+        }
+        p::before {
+            content: "😣";
+        }
+        p::after {
+            content: "🤐";
+        }
+        p:hover {
+            color: seagreen;
+        }
+        div p:nth-child(2) {
+            color: skyblue;
+        }
+        ::placeholder {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <p>Hola</p>
+    <div>
+        <p>parrafo1</p>
+        <p>parrafo2</p>
+        <p>parrafo3</p>
+    </div>
+    <input type="text" placeholder="name">
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>selectors 2</title>
+    <style>
+        div p {
+            color: peachpuff;
+        }
+        div > div {
+            background: pink;
+        }
+
+        .es {
+            background: red;
+        }
+
+        div + section {
+            background: green;
+        }
+
+        div ~ p {
+            color: aqua
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <div>
+            <p>Hola</p>
+            <div class="es">Que tal</div>
+        </div>
+    </div>
+    <p>Selectores!</p>
+    <p>Selectores!</p>
+    <section>
+        Section!
+    </section>
+    <div>Master!</div>
+</body>
+</html>

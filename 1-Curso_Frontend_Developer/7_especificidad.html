@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specificity</title>
+    <style>
+        /* por regla de peso, el selector de id posee mas peso que el selector de clases */
+        #hola{ 
+            color: red;
+        }
+        .hola_class {
+            color: turquoise;
+        }
+    </style>
+</head>
+<body>
+    <div id="hola" class="hola_class">
+        Hola
+    </div>
+</body>
+</html>
