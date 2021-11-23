@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My card</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin    : 0;
+            padding   : 0;
+            background: #082032;
+        }
+        p {
+            background-color: transparent;
+            font-family     : 'Nunito Sans', sans-serif;
+        }
+        section {
+            display        : flex;
+            position       : relative;
+            top            : 20px;
+            width          : 100%;
+            justify-content: center;
+        }
+        .card {
+            display         : flex;
+            flex-direction  : column;
+            align-items     : center;
+            background-color: #2C394B;
+            position        : absolute;
+            width           : 200px;
+            height          : 300px;
+            border-radius   : 10px;
+            overflow        : hidden;
+        }
+        #cover-container {
+            position: relative;
+            width   : 200px;
+            height  : 150px;
+            overflow: hidden;
+        }
+        #cover {
+            position: absolute;
+            top     : -150px;
+            width   : 200px;
+            height  : auto;
+        }
+        #profile-container {
+            box-sizing   : border-box;
+            position     : relative;
+            top          : -40px;
+            width        : 80px;
+            height       : 80px;
+            overflow     : hidden;
+            border-radius: 50%;
+            border       : 4px solid #2C394B;
+            z-index      : 5;
+        }
+        #profile {
+            width : 100%;
+        }
+        .follows {
+            background-color     : transparent;
+            display              : grid;
+            grid-template-rows   : 1fr;
+            grid-template-columns: repeat(3, 1fr);
+            position             : absolute;
+            width                : 100%;
+            top                  : 150px;
+            height               : 40px;
+        }
+        .follows div {
+            display         : flex;
+            flex-direction  : column;
+            background-color: transparent;
+            justify-content : center;
+            align-items     : center;
+        }
+        .follows p {
+            font-size: 8px;
+            color    : #D2D2D2;
+        }
+        #followers-number, #following-number {
+            font-size  : 12px;
+            font-weight: 700;
+            color      : white;
+        }
+        .followers {
+            grid-column : 1 / 2;
+            justify-self: center;
+        }
+        .following {
+            grid-column : 3 / 4;
+            justify-self: center;
+        }
+        .description {
+            background: transparent;
+            position  : absolute;
+            top       : 190px;
+        }
+        .description p:nth-child(1) {
+            font-size : 12px;
+            font-weight: 800;
+            color     : #D2D2D2;
+            text-align: center;
+        }
+        .description p:nth-child(2) {
+            font-size : 8px;
+            color     : #D2D2D2;
+            text-align: center;
+        }
+        .networks {
+            position        : absolute;
+            top             : 190px;
+            display         : flex;
+            width           : 100%;
+            justify-content : space-evenly;
+            padding         : 15px;
+            background-color: transparent;
+        }
+        .networks img {
+            margin-top      : 25px;
+            width           : 25px;
+            height          : 25px;
+            background-color: transparent;
+        }
+        button {
+            position        : absolute;
+            bottom          : 0px;
+            background-color: #FF4c29;
+            color           : #D2D2D2;
+            font-size       : 10px;
+            width           : 100%;
+            height          : 30px;
+            border          : none;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="card">
+            <div id="cover-container">
+                <img id="cover" src="https://images.pexels.com/photos/3052361/pexels-photo-3052361.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="cover-img"/>
+            </div>
+            <div id="profile-container">
+                <img id="profile" src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="cover-img"/>
+            </div>
+            <div class="follows">
+                <div class="followers">
+                    <p id="followers-text">Followers</p>
+                    <p id="followers-number">2091</p>
+                </div>
+                <div class="following">
+                    <p id="following-text">Following</p>
+                    <p id="following-number">578</p>
+                </div>
+            </div>
+            <div class="description">
+                <p>Name</p>
+                <p>Occupation</p>
+            </div>
+            <div class="networks">
+                <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaWQ9IkxheWVyXzEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDEwMDAgMTAwMDsiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDEwMDAgMTAwMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDojM0I1NzlEO30KCS5zdDF7ZmlsbDojRkZGRkZGO30KPC9zdHlsZT48dGl0bGUvPjxnPjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik01MDAsMTAwMEw1MDAsMTAwMEMyMjMuOSwxMDAwLDAsNzc2LjEsMCw1MDB2MEMwLDIyMy45LDIyMy45LDAsNTAwLDBoMGMyNzYuMSwwLDUwMCwyMjMuOSw1MDAsNTAwdjAgICBDMTAwMCw3NzYuMSw3NzYuMSwxMDAwLDUwMCwxMDAweiIvPjxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik02MzAsMTAwMFY2MTIuN2gxMzBsMTkuNS0xNTAuOUg2MzB2LTk2LjRjMC00My43LDEyLjEtNzMuNSw3NC44LTczLjVsNzkuOSwwVjE1NyAgIGMtMTMuOC0xLjgtNjEuMy01LjktMTE2LjUtNS45Yy0xMTUuMiwwLTE5NC4xLDcwLjMtMTk0LjEsMTk5LjV2MTExLjNIMzQzLjh2MTUwLjloMTMwLjNWMTAwMEg2MzB6IiBpZD0iZiIvPjwvZz48L3N2Zz4=" alt="facebook">
+                <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaWQ9IkxheWVyXzEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDEwMDAgMTAwMDsiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDEwMDAgMTAwMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDp1cmwoI1NWR0lEXzFfKTt9Cgkuc3Qxe2ZpbGw6I0ZGRkZGRjt9Cjwvc3R5bGU+PGxpbmVhckdyYWRpZW50IGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiBpZD0iU1ZHSURfMV8iIHgxPSIxNDYuNDQ2NSIgeDI9Ijg1My41NTM1IiB5MT0iODUzLjU1MzUiIHkyPSIxNDYuNDQ2NSI+PHN0b3Agb2Zmc2V0PSIwIiBzdHlsZT0ic3RvcC1jb2xvcjojRkZENTIxIi8+PHN0b3Agb2Zmc2V0PSI1LjUxMDQ4MWUtMDIiIHN0eWxlPSJzdG9wLWNvbG9yOiNGRkQwMjAiLz48c3RvcCBvZmZzZXQ9IjAuMTI0MSIgc3R5bGU9InN0b3AtY29sb3I6I0ZFQzAxRSIvPjxzdG9wIG9mZnNldD0iMC4yMDA0IiBzdHlsZT0ic3RvcC1jb2xvcjojRkNBNzFCIi8+PHN0b3Agb2Zmc2V0PSIwLjI4MjEiIHN0eWxlPSJzdG9wLWNvbG9yOiNGQTgzMTYiLz48c3RvcCBvZmZzZXQ9IjAuMzY4MSIgc3R5bGU9InN0b3AtY29sb3I6I0Y4NTUxMCIvPjxzdG9wIG9mZnNldD0iMC40NTYzIiBzdHlsZT0ic3RvcC1jb2xvcjojRjUxRTA5Ii8+PHN0b3Agb2Zmc2V0PSIwLjUiIHN0eWxlPSJzdG9wLWNvbG9yOiNGMzAwMDUiLz48c3RvcCBvZmZzZXQ9IjAuNTAzNSIgc3R5bGU9InN0b3AtY29sb3I6I0YyMDAwNyIvPjxzdG9wIG9mZnNldD0iMC41OTY2IiBzdHlsZT0ic3RvcC1jb2xvcjojRTEwMDNCIi8+PHN0b3Agb2Zmc2V0PSIwLjY4NzkiIHN0eWxlPSJzdG9wLWNvbG9yOiNEMzAwNjciLz48c3RvcCBvZmZzZXQ9IjAuNzc1NyIgc3R5bGU9InN0b3AtY29sb3I6I0M3MDA4OCIvPjxzdG9wIG9mZnNldD0iMC44NTg5IiBzdHlsZT0ic3RvcC1jb2xvcjojQkYwMEEwIi8+PHN0b3Agb2Zmc2V0PSIwLjkzNTciIHN0eWxlPSJzdG9wLWNvbG9yOiNCQjAwQUYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0eWxlPSJzdG9wLWNvbG9yOiNCOTAwQjQiLz48L2xpbmVhckdyYWRpZW50PjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik01MDAsMTAwMEw1MDAsMTAwMEMyMjMuOSwxMDAwLDAsNzc2LjEsMCw1MDB2MEMwLDIyMy45LDIyMy45LDAsNTAwLDBoMGMyNzYuMSwwLDUwMCwyMjMuOSw1MDAsNTAwdjAgIEMxMDAwLDc3Ni4xLDc3Ni4xLDEwMDAsNTAwLDEwMDB6Ii8+PGc+PHBhdGggY2xhc3M9InN0MSIgZD0iTTUwMCwyMjAuMmM5MS4xLDAsMTAxLjksMC4zLDEzNy45LDJjMzMuMywxLjUsNTEuNCw3LjEsNjMuNCwxMS44YzE1LjksNi4yLDI3LjMsMTMuNiwzOS4yLDI1LjUgICBjMTEuOSwxMS45LDE5LjMsMjMuMywyNS41LDM5LjJjNC43LDEyLDEwLjIsMzAuMSwxMS44LDYzLjRjMS42LDM2LDIsNDYuOCwyLDEzNy45cy0wLjMsMTAxLjktMiwxMzcuOSAgIGMtMS41LDMzLjMtNy4xLDUxLjQtMTEuOCw2My40Yy02LjIsMTUuOS0xMy42LDI3LjMtMjUuNSwzOS4yYy0xMS45LDExLjktMjMuMywxOS4zLTM5LjIsMjUuNWMtMTIsNC43LTMwLjEsMTAuMi02My40LDExLjggICBjLTM2LDEuNi00Ni44LDItMTM3LjksMnMtMTAxLjktMC4zLTEzNy45LTJjLTMzLjMtMS41LTUxLjQtNy4xLTYzLjQtMTEuOGMtMTUuOS02LjItMjcuMy0xMy42LTM5LjItMjUuNSAgIGMtMTEuOS0xMS45LTE5LjMtMjMuMy0yNS41LTM5LjJjLTQuNy0xMi0xMC4yLTMwLjEtMTEuOC02My40Yy0xLjYtMzYtMi00Ni44LTItMTM3LjlzMC4zLTEwMS45LDItMTM3LjkgICBjMS41LTMzLjMsNy4xLTUxLjQsMTEuOC02My40YzYuMi0xNS45LDEzLjYtMjcuMywyNS41LTM5LjJjMTEuOS0xMS45LDIzLjMtMTkuMywzOS4yLTI1LjVjMTItNC43LDMwLjEtMTAuMiw2My40LTExLjggICBDMzk4LjEsMjIwLjUsNDA4LjksMjIwLjIsNTAwLDIyMC4yIE01MDAsMTU4LjdjLTkyLjcsMC0xMDQuMywwLjQtMTQwLjcsMi4xYy0zNi4zLDEuNy02MS4xLDcuNC04Mi45LDE1LjkgICBDMjU0LDE4NS4zLDIzNC45LDE5NywyMTYsMjE2Yy0xOSwxOS0zMC42LDM4LTM5LjQsNjAuNWMtOC40LDIxLjctMTQuMiw0Ni41LTE1LjksODIuOWMtMS43LDM2LjQtMi4xLDQ4LTIuMSwxNDAuNyAgIGMwLDkyLjcsMC40LDEwNC4zLDIuMSwxNDAuN2MxLjcsMzYuMyw3LjQsNjEuMSwxNS45LDgyLjlDMTg1LjMsNzQ2LDE5Nyw3NjUuMSwyMTYsNzg0YzE5LDE5LDM4LDMwLjYsNjAuNSwzOS40ICAgYzIxLjcsOC40LDQ2LjUsMTQuMiw4Mi45LDE1LjljMzYuNCwxLjcsNDgsMi4xLDE0MC43LDIuMXMxMDQuMy0wLjQsMTQwLjctMi4xYzM2LjMtMS43LDYxLjEtNy40LDgyLjktMTUuOSAgIEM3NDYsODE0LjcsNzY1LjEsODAzLDc4NCw3ODRjMTktMTksMzAuNi0zOCwzOS40LTYwLjVjOC40LTIxLjcsMTQuMi00Ni41LDE1LjktODIuOWMxLjctMzYuNCwyLjEtNDgsMi4xLTE0MC43ICAgcy0wLjQtMTA0LjMtMi4xLTE0MC43Yy0xLjctMzYuMy03LjQtNjEuMS0xNS45LTgyLjlDODE0LjcsMjU0LDgwMywyMzQuOSw3ODQsMjE2Yy0xOS0xOS0zOC0zMC42LTYwLjUtMzkuNCAgIGMtMjEuNy04LjQtNDYuNS0xNC4yLTgyLjktMTUuOUM2MDQuMywxNTkuMSw1OTIuNywxNTguNyw1MDAsMTU4LjdMNTAwLDE1OC43eiIvPjxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik01MDAsMzI0LjdjLTk2LjgsMC0xNzUuMyw3OC41LTE3NS4zLDE3NS4zUzQwMy4yLDY3NS4zLDUwMCw2NzUuM1M2NzUuMyw1OTYuOCw2NzUuMyw1MDAgICBTNTk2LjgsMzI0LjcsNTAwLDMyNC43eiBNNTAwLDYxMy44Yy02Mi44LDAtMTEzLjgtNTAuOS0xMTMuOC0xMTMuOFM0MzcuMiwzODYuMiw1MDAsMzg2LjJjNjIuOCwwLDExMy44LDUwLjksMTEzLjgsMTEzLjggICBTNTYyLjgsNjEzLjgsNTAwLDYxMy44eiIvPjxjaXJjbGUgY2xhc3M9InN0MSIgY3g9IjY4Mi4yIiBjeT0iMzE3LjgiIHI9IjQxIi8+PC9nPjwvc3ZnPg==" alt="instagram">
+                <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMC8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvVFIvMjAwMS9SRUMtU1ZHLTIwMDEwOTA0L0RURC9zdmcxMC5kdGQnPjxzdmcgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMzIgMzIiIGhlaWdodD0iMzJweCIgaWQ9IkxheWVyXzEiIHZlcnNpb249IjEuMCIgdmlld0JveD0iMCAwIDMyIDMyIiB3aWR0aD0iMzJweCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PGc+PGNpcmNsZSBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGN4PSIxNiIgY3k9IjE2IiBmaWxsPSIjMDA3QkI1IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHI9IjE2Ii8+PGc+PHJlY3QgZmlsbD0iI0ZGRkZGRiIgaGVpZ2h0PSIxNCIgd2lkdGg9IjQiIHg9IjciIHk9IjExIi8+PHBhdGggZD0iTTIwLjQ5OSwxMWMtMi43OTEsMC0zLjI3MSwxLjAxOC0zLjQ5OSwydi0yaC00djE0aDR2LThjMC0xLjI5NywwLjcwMy0yLDItMmMxLjI2NiwwLDIsMC42ODgsMiwydjhoNHYtNyAgICBDMjUsMTQsMjQuNDc5LDExLDIwLjQ5OSwxMXoiIGZpbGw9IiNGRkZGRkYiLz48Y2lyY2xlIGN4PSI5IiBjeT0iOCIgZmlsbD0iI0ZGRkZGRiIgcj0iMiIvPjwvZz48L2c+PGcvPjxnLz48Zy8+PGcvPjxnLz48Zy8+PC9zdmc+" alt="linkedin">
+            </div>
+            <button>
+                ¡Hey!
+            </button>
+        </div>
+    </section>
+</body>
+</html>
